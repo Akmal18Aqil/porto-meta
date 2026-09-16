@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Djava, 23 Sistem Siap Demo | Custom Software Indonesia</title>
+<meta name="description" content="23 sistem custom siap dibuka live: POS, keuangan, klinik, gudang, sekolah, properti, Web3 & otomasi WA. Klik demo, cocok, lalu minta harga fixed-price.">
+<meta property="og:title" content="Djava, 23 Sistem Siap Demo Live">
+<meta property="og:description" content="Bukan mockup. Klik dan coba langsung: POS, Finance, Klinik, Gudang, Sekolah, Web3, WaBlast.">
+<meta property="og:type" content="website">
+<!-- META PIXEL: ganti ID di bawah sebelum pasang iklan
+<script>!function(f,b,e,v,n,t,s){/* pixel */}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','GANTI_PIXEL_ID');fbq('track','PageView');</script>
+-->
+<style>
+:root{--paper:#faf8f4;--card:#fff;--line:#e5ddd0;--ink:#1c1917;--mut:#57534e;--acc:#9a3412;--wa:#15803d;--r:6px;--max:1120px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Inter,Arial,sans-serif;background:var(--paper);color:var(--ink);line-height:1.6;font-size:16px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+header{position:sticky;top:0;z-index:20;background:var(--paper);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0;gap:12px}
+.logo{font-family:ui-monospace,Menlo,Consolas,monospace;font-weight:700}
+.logo span{color:var(--mut);font-weight:400}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-size:14px;font-weight:600;padding:12px 20px;border-radius:var(--r);border:1px solid var(--acc);color:#fff;background:var(--acc);text-decoration:none;cursor:pointer}
+.btn.wa{background:var(--wa);border-color:var(--wa)}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.hero{padding:48px 0 32px}
+.hero-grid{display:grid;gap:24px;grid-template-columns:1fr}
+@media(min-width:960px){.hero-grid{grid-template-columns:1.4fr 1fr;align-items:start}}
+.proof{border:1px solid var(--line);background:var(--card);border-radius:8px;padding:20px}
+.proof ol{margin:10px 0 14px 20px;color:var(--mut);font-size:14px}
+.proof li{margin:6px 0}
+.proof li b{color:var(--ink)}
+.tick{list-style:none;margin:16px 0;padding:0;display:grid;gap:8px;font-size:15px}
+.tick li{padding-left:28px;position:relative}
+.tick li::before{content:"✓";position:absolute;left:0;top:0;color:var(--wa);font-weight:800}
+.micro{font-size:13px;color:var(--mut);margin-top:10px;max-width:52ch}
+.badge{display:inline-block;font-size:12px;font-weight:600;border:1px solid var(--line);background:#fff;padding:6px 12px;border-radius:99px;color:var(--wa)}
+h1{font-size:32px;line-height:1.15;letter-spacing:-.02em;margin:16px 0 12px}
+@media(min-width:900px){h1{font-size:52px}.hero{padding:72px 0 48px}}
+.hero p.sub{color:var(--mut);max-width:60ch;font-size:18px}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin:24px 0}
+.trust{display:flex;flex-wrap:wrap;gap:8px 24px;font-size:14px;color:var(--mut);margin-top:8px}
+.trust b{color:var(--ink)}
+section{padding:40px 0}
+h2{font-size:26px;letter-spacing:-.02em;margin-bottom:8px}
+@media(min-width:900px){h2{font-size:34px}}
+.lead{color:var(--mut);max-width:62ch;margin-bottom:24px}
+.grid{display:grid;gap:12px;grid-template-columns:1fr}
+@media(min-width:700px){.grid.c2{grid-template-columns:1fr 1fr}.grid.c3{grid-template-columns:1fr 1fr 1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px}
+.card h3{font-size:17px;margin-bottom:4px}
+.card p{font-size:14px;color:var(--mut)}
+.tag{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--acc)}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.filters button{font-size:13px;font-weight:600;padding:8px 14px;border-radius:99px;border:1px solid var(--line);background:#fff;cursor:pointer;color:var(--mut)}
+.filters button[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.demo-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px;display:flex;flex-direction:column;gap:10px}
+.demo-card h3{font-size:16px}
+.demo-card .desc{font-size:13.5px;color:var(--mut);flex:1}
+.demo-card .row{display:flex;gap:8px}
+.demo-card a{flex:1;text-align:center;font-size:13px;font-weight:700;padding:10px;border-radius:var(--r);text-decoration:none;border:1px solid var(--ink)}
+.demo-card a.open{background:var(--ink);color:#fff}
+.demo-card a.ask{background:#fff;color:var(--ink)}
+.steps{border-top:2px solid var(--ink)}
+.step{display:grid;grid-template-columns:48px 1fr;gap:12px;padding:18px 0;border-bottom:1px solid var(--line)}
+.step .n{font-family:ui-monospace,monospace;color:var(--acc);font-weight:700}
+details{border-top:1px solid var(--line);padding:14px 0}
+details:last-of-type{border-bottom:1px solid var(--line)}
+summary{font-weight:700;cursor:pointer;list-style:none}
+summary::-webkit-details-marker{display:none}
+details p{color:var(--mut);font-size:15px;margin-top:8px;max-width:62ch}
+.final{background:var(--ink);color:#fff;border-radius:10px;padding:32px 24px}
+@media(min-width:900px){.final{padding:48px}}
+.final p{color:#d6d3d1;margin:12px 0 20px;max-width:56ch}
+.final .cta-row{margin-bottom:0}
+.sticky-wa{position:fixed;bottom:0;left:0;right:0;z-index:30;background:#fff;border-top:1px solid var(--line);padding:10px 16px calc(10px + env(safe-area-inset-bottom))}
+.sticky-wa a{display:block;text-align:center;background:var(--wa);color:#fff;font-weight:700;text-decoration:none;padding:14px;border-radius:var(--r)}
+@media(min-width:900px){.sticky-wa{display:none}}
+body{padding-bottom:72px}
+@media(min-width:900px){body{padding-bottom:0}}
+footer{padding:24px 0 40px;color:var(--mut);font-size:13px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between}
+</style>
+</head>
+<body>
+
+<header>
+<div class="wrap nav">
+<div class="logo">djava<span>.web.id</span></div>
+<a class="btn wa" data-wa href="https://wa.me/6282142858194?text=Halo%20Djava%2C%20saya%20lihat%20portofolio%2023%20demo%20dari%20iklan.%20Minta%20info%20harga.">Chat WhatsApp</a>
+</div>
+</header>
+
+<main>
+<div class="wrap hero">
+<div class="hero-grid">
+<div>
+<span class="badge">Slot Q3 2026 dibuka. Respon hari yang sama.</span>
+<h1>Capek input order, stok, dan laporan manual? Coba 23 sistem yang sudah jadi.</h1>
+<p class="sub">Jangan beli dari brosur. Buka demonya langsung dari HP Anda, klik menu di dalamnya, rasakan alurnya. Kalau ada yang mirip bisnis Anda, chat WA dan minta harga fix tertulis.</p>
+<ul class="tick">
+<li><b>23 demo live</b>, bukan screenshot. Semua bisa diklik sekarang.</li>
+<li>Bangun software <b>sejak 2002</b>, 6+ sistem jalan di produksi.</li>
+<li><b>Harga fix sebelum mulai.</b> Tanpa argo per jam.</li>
+</ul>
+<div class="cta-row">
+<a class="btn wa" data-wa href="https://wa.me/6282142858194?text=Halo%20Djava%2C%20saya%20dari%20iklan.%20Bisnis%20saya%20di%20___%2C%20yang%20masih%20manual%20___%20.%20Minta%20estimasi%20harga.">Chat WA, Minta Estimasi Harga</a>
+<a class="btn ghost" href="#demo">Coba 23 Demo Live</a>
+</div>
+<p class="micro">Cara tercepat: pilih demo yang mirip bisnis Anda di bawah (30 detik), klik Buka Demo, kalau cocok tekan Tanya. Anda tidak perlu tahu teknisnya, cukup ceritakan proses yang masih manual.</p>
+</div>
+<aside class="proof" aria-label="Cara pakai halaman ini">
+<span class="tag">Mulai dalam 30 detik</span>
+<ol>
+<li>Pilih sistem yang <b>mirip bisnis Anda</b> di daftar bawah.</li>
+<li>Klik <b>Buka Demo</b>, coba langsung seperti klien.</li>
+<li>Cocok? Tekan <b>Tanya</b>, harga fix masuk WA otomatis.</li>
+</ol>
+<a class="btn ghost" href="#demo" style="width:100%">Pilih demo Anda</a>
+<p class="micro">Contoh paling dibuka: KasirKu untuk toko, KlinikPro untuk klinik, GudangKu untuk stok, SekolahPro untuk sekolah.</p>
+</aside>
+</div>
+<div class="trust"><span><b>23</b> demo live</span><span><b>Sejak 2002</b> bangun software</span><span><b>6+</b> jalan di produksi</span><span><b>Fixed-price</b> sebelum mulai</span></div>
+</div>
+
+<div class="wrap">
+<section aria-label="Masalah">
+<h2>Kalau ini terjadi di bisnis Anda, itu yang pertama dibenahi</h2>
+<p class="lead">Iklan ini untuk pemilik bisnis yang orderan, stok, pembayaran, dan laporan masih dikerjakan tangan.</p>
+<div class="grid c2">
+<div class="card"><span class="tag">Komunikasi</span><h3>Order masuk via chat, input ulang ke Excel</h3><p>Setiap hari diulang. Capek, lambat, gampang salah ketik.</p></div>
+<div class="card"><span class="tag">Stok</span><h3>Stok dicatat manual, beda orang beda angka</h3><p>Begitu dua orang update bareng, selisih langsung muncul.</p></div>
+<div class="card"><span class="tag">Keuangan</span><h3>Cek pembayaran satu-satu antar gateway</h3><p>Satu salah cocokkan = uang hilang tanpa sadar.</p></div>
+<div class="card"><span class="tag">Laporan</span><h3>Rekap tiap Jumat, Senin sudah basi</h3><p>Keputusan jalan pakai data minggu lalu.</p></div>
+</div>
+</section>
+
+<section id="demo" aria-label="Portofolio demo">
+<h2>23 sistem, semua bisa dibuka live</h2>
+<p class="lead">Klik <b>Buka Demo ↗</b>, tampil seperti yang dilihat klien saat presentasi. Tombol <b>Tanya</b> langsung chat WA dengan nama sistem terisi otomatis.</p>
+<div class="filters" role="group" aria-label="Filter kategori">
+<button aria-pressed="true" data-f="all">Semua (23)</button>
+<button aria-pressed="false" data-f="pos">Kasir & POS</button>
+<button aria-pressed="false" data-f="keu">Keuangan</button>
+<button aria-pressed="false" data-f="ops">Operasional</button>
+<button aria-pressed="false" data-f="prof">Profil & Yayasan</button>
+<button aria-pressed="false" data-f="web3">Web3</button>
+<button aria-pressed="false" data-f="auto">Otomasi WA</button>
+</div>
+<div class="grid c3" id="grid">
+<div class="demo-card" data-cat="pos"><span class="tag">POS</span><h3>KasirKu</h3><p class="desc">Kasir cepat untuk toko & kuliner: transaksi, struk, rekap harian.</p><div class="row"><a class="open" href="https://kasirku-lemon.vercel.app" target="_blank" rel="noopener">Buka Demo ↗</a><a class="ask" data-wa href="https://wa.me/6282142858194?text=Halo%2C%20saya%20coba%20demo%20KasirKu.%20Minta%20harga%20sistem%20kasir%20seperti%20itu.">Tanya</a></div></div>
+<div class="demo-card" data-cat="pos"><span class="tag">POS / Retail UMKM</span><h3>POSku</h3><p class="desc">POS ringan untuk UMKM retail: produk, stok, laporan omzet.</p><div class="row"><a class="open" href="https://posku-azure.vercel.app" target="_blank" rel="noopener">Buka Demo ↗</a><a class="ask" data-wa href="https://wa.me/6282142858194?text=Halo%2C%20saya%20coba%20demo%20POSku.%20Minta%20harga.">Tanya</a></div></div>
+<div class="demo-card" data-cat="keu"><span class="tag">Keuangan</span><h3>FinanceKu AI</h3><p class="desc">Pantau arus kas & kategori otomatis berbantuan AI.</p><div class="row"><a class="open" href="https://financeku-olive.vercel.app" target="_blank" rel="noopener">Buka Demo ↗</a><a class="ask" data-wa href="https://wa.me/6282142858194?text=Halo%2C%20saya%20coba%20demo%20FinanceKu%20AI.%20Minta%20harga.">Tanya</a></div></div>
+<div class="demo-card" data-cat="keu"><span class="tag">Akuntansi</span><h3>AccountingPro AI</h3><p class="desc">Jurnal, buku besar, dan laporan laba-rugi otomatis.</p><div class="row"><a class="open" href="https://demo-accountingpro.vercel.app" target="_blank" rel="noopener">Buka Demo ↗</a><a class="ask" data-wa href="https://wa.me/6282142858194?text=Halo%2C%20saya%20coba%20demo%20AccountingPro.%20Minta%20harga.">Tanya</a></div></div>
+<div class="demo-card" data-cat="keu"><span class="tag">Trading</span><h3>TradePilot AI</h3><p class="desc">Dashboard analisa trading dengan ringkasan AI.</p><div class="row"><a class="open" href="https://demo-tradepilot-ai.vercel.app" target="_blank" rel="noopener">Buka Demo ↗</a><a class="ask" data-wa href="https://wa.me/6282142858194?text=Halo%2C%20saya%20coba%20demo%20TradePilot.%20Minta%20harga.">Tanya</a></div></div>
+<div class="demo-card" data-cat="ops"><span class="tag">Klinik</span><h3>KlinikPro</h3><p class="desc">Pendaftaran pasien, antrian, rekam medis, billing.</p><div class="row"><a class="open" href="https://demo-klinikpro.vercel.app" target="_blank" rel="noopener">Buka Demo ↗</a><a class="ask" data-wa href="https://wa.me/6282142858194?text=Halo%2C%20saya%20coba%20demo%20KlinikPro.%20Minta%20harga.">Tanya</a></div></div>
+<div class="demo-card" data-cat="ops"><span class="tag">HRIS / Payroll</span><h3>HRISPro</h3><p class="desc">Data karyawan, absensi, cuti, dan hitung gaji.</p><div class="row"><a class="open" href="https://demo-hrispro.vercel.app" target="_blank" rel="noopener">Buka Demo ↗</a><a class="ask" data-wa href="https://wa.me/6282142858194?text=Halo%2C%20saya%20coba%20demo%20HRISPro.%20Minta%20harga.">Tanya</a></div></div>
+<div class="demo-card" data-cat="ops"><span class="tag">Gudang</span><h3>GudangKu</h3><p class="desc">Stok masuk-keluar akurat walau dipakai banyak orang.</p><div class="row"><a class="open" href="https://demo-gudangku.vercel.app" target="_blank" rel="noopener">Buka Demo ↗</a><a class="ask" data-wa href="https://wa.me/6282142858194?text=Halo%2C%20saya%20coba%20demo%20GudangKu.%20Minta%20harga.">Tanya</a></div></div>
+<div class="demo-card" data-cat="ops"><span class="tag">Pertanian</span><h3>AgriManage Pro</h3><p class="desc">Kelola lahan, tanam-panen, dan hasil kebun.</p><div class="row"><a class="open" href="https://demo-manajemen-pertanian.vercel.app" target="_blank" rel="noopener">Buka Demo ↗</a><a class="ask" data-wa href="https://wa.me/6282142858194?text=Halo%2C%20saya%20coba%20demo%20AgriManage.%20Minta%20harga.">Tanya</a></div></div>
+<div class="demo-card" data-cat="ops"><span class="tag">Peternakan</span><h3>TernakManage Pro</h3><p class="desc">Data ternak, pakan, kesehatan, dan panen.</p><div class="row"><a class="open" href="https://demo-peternakan.vercel.app" target="_blank" rel="noopener">Buka Demo ↗</a><a class="ask" data-wa href="https://wa.me/6282142858194?text=Halo%2C%20saya%20coba%20demo%20TernakManage.%20Minta%20harga.">Tanya</a></div></div>
+<div class="demo-card" data-cat="ops"><span class="tag">Laundry</span><h3>LaundryPro Manager</h3><p class="desc">Order laundry, status cucian, pelanggan, kasir.</p><div class="row"><a class="open" href="https://demo-laundry-phi.vercel.app" target="_blank" rel="noopener">Buka Demo ↗</a><a class="ask" data-wa href="https://wa.me/6282142858194?text=Halo%2C%20saya%20coba%20demo%20LaundryPro.%20Minta%20harga.">Tanya</a></div></div>
+<div class="demo-card" data-cat="ops"><span class="tag">Hospitality</span><h3>StaycationPro</h3><p class="desc">Booking villa/penginapan, kamar, dan pembayaran.</p><div class="row"><a class="open" href="https://demo-staycationpro.vercel.app" target="_blank" rel="noopener">Buka Demo ↗</a><a class="ask" data-wa href="https://wa.me/6282142858194?text=Halo%2C%20saya%20coba%20demo%20StaycationPro.%20Minta%20harga.">Tanya</a></div></div>
+<div class="demo-card" data-cat="ops"><span class="tag">Properti</span><h3>Property</h3><p class="desc">Listing properti, unit, agen, dan leads pembeli.</p><div class="row"><a class="open" href="https://demo-property.vercel.app" target="_blank" rel="noopener">Buka Demo ↗</a><a class="ask" data-wa href="https://wa.me/6282142858194?text=Halo%2C%20saya%20coba%20demo%20Property.%20Minta%20harga.">Tanya</a></div></div>
+<div class="demo-card" data-cat="ops"><span class="tag">Pendidikan</span><h3>SekolahPro</h3><p class="desc">Data siswa, kelas, nilai, SPP, dan absensi.</p><div class="row"><a class="open" href="https://sekolahpro-demo.vercel.app" target="_blank" rel="noopener">Buka Demo ↗</a><a class="ask" data-wa href="https://wa.me/6282142858194?text=Halo%2C%20saya%20coba%20demo%20SekolahPro.%20Minta%20harga.">Tanya</a></div></div>
+<div class="demo-card" data-cat="ops"><span class="tag">Otomotif</span><h3>Dealer Mobil</h3><p class="desc">Katalog unit, test-drive, SPK, dan follow-up sales.</p><div class="row"><a class="open" href="https://demo-compro.vercel.app" target="_blank" rel="noopener">Buka Demo ↗</a><a class="ask" data-wa href="https://wa.me/6282142858194?text=Halo%2C%20saya%20coba%20demo%20Dealer%20Mobil.%20Minta%20harga.">Tanya</a></div></div>
+<div class="demo-card" data-cat="ops"><span class="tag">Kepatuhan</span><h3>QMSPro</h3><p class="desc">Dokumen mutu, audit, temuan, dan tindakan korektif.</p><div class="row"><a class="open" href="https://demo-qmspro.vercel.app" target="_blank" rel="noopener">Buka Demo ↗</a><a class="ask" data-wa href="https://wa.me/6282142858194?text=Halo%2C%20saya%20coba%20demo%20QMSPro.%20Minta%20harga.">Tanya</a></div></div>
+<div class="demo-card" data-cat="prof"><span class="tag">Company Profile</span><h3>Compro</h3><p class="desc">Website profil perusahaan yang rapi dan cepat.</p><div class="row"><a class="open" href="https://demo-compro-delta.vercel.app" target="_blank" rel="noopener">Buka Demo ↗</a><a class="ask" data-wa href="https://wa.me/6282142858194?text=Halo%2C%20saya%20coba%20demo%20Compro.%20Minta%20harga.">Tanya</a></div></div>
+<div class="demo-card" data-cat="prof"><span class="tag">Nirlaba</span><h3>Yayasan</h3><p class="desc">Donasi, program, laporan transparan untuk yayasan.</p><div class="row"><a class="open" href="https://demo-yayasan.vercel.app" target="_blank" rel="noopener">Buka Demo ↗</a><a class="ask" data-wa href="https://wa.me/6282142858194?text=Halo%2C%20saya%20coba%20demo%20Yayasan.%20Minta%20harga.">Tanya</a></div></div>
+<div class="demo-card" data-cat="web3"><span class="tag">Web3 Crowdfunding</span><h3>Web3 Crowdfunding</h3><p class="desc">Galang dana on-chain dengan progres transparan.</p><div class="row"><a class="open" href="https://demo-web3-crowdfunding.vercel.app" target="_blank" rel="noopener">Buka Demo ↗</a><a class="ask" data-wa href="https://wa.me/6282142858194?text=Halo%2C%20saya%20coba%20demo%20Web3%20Crowdfunding.%20Minta%20harga.">Tanya</a></div></div>
+<div class="demo-card" data-cat="web3"><span class="tag">Web3 Token Tracker</span><h3>Token Tracker</h3><p class="desc">Pantau harga & portofolio token dalam satu layar.</p><div class="row"><a class="open" href="https://demo-web3-token-tracker.vercel.app" target="_blank" rel="noopener">Buka Demo ↗</a><a class="ask" data-wa href="https://wa.me/6282142858194?text=Halo%2C%20saya%20coba%20demo%20Token%20Tracker.%20Minta%20harga.">Tanya</a></div></div>
+<div class="demo-card" data-cat="web3"><span class="tag">Web3 Wallet Tracker</span><h3>Whale Wallet Tracker</h3><p class="desc">Lacak pergerakan wallet besar (whale) secara live.</p><div class="row"><a class="open" href="https://demo-whale-tracker.vercel.app" target="_blank" rel="noopener">Buka Demo ↗</a><a class="ask" data-wa href="https://wa.me/6282142858194?text=Halo%2C%20saya%20coba%20demo%20Whale%20Tracker.%20Minta%20harga.">Tanya</a></div></div>
+<div class="demo-card" data-cat="web3"><span class="tag">Web3 Freelance</span><h3>Web3 Freelance</h3><p class="desc">Marketplace jasa freelance dengan escrow crypto.</p><div class="row"><a class="open" href="https://demo-web3-freelance.vercel.app" target="_blank" rel="noopener">Buka Demo ↗</a><a class="ask" data-wa href="https://wa.me/6282142858194?text=Halo%2C%20saya%20coba%20demo%20Web3%20Freelance.%20Minta%20harga.">Tanya</a></div></div>
+<div class="demo-card" data-cat="auto"><span class="tag">Otomasi komunikasi</span><h3>WaBlastPro</h3><p class="desc">Blast & auto-reply WA resmi untuk order dan CS.</p><div class="row"><a class="open" href="https://wbp.web.id" target="_blank" rel="noopener">Buka Demo ↗</a><a class="ask" data-wa href="https://wa.me/6282142858194?text=Halo%2C%20saya%20coba%20demo%20WaBlastPro.%20Minta%20harga.">Tanya</a></div></div>
+</div>
+<p style="font-size:13px;color:var(--mut);margin-top:12px">Sumber demo: djava.web.id, semua link dibuka di tab baru.</p>
+</section>
+
+<section aria-label="Proses">
+<h2>Harga jelas sebelum mulai</h2>
+<p class="lead">Fixed-price, tertulis. Tanpa argo per jam.</p>
+<div class="steps">
+<div class="step"><span class="n">01</span><div><b>Obrolan awal (15 mnt)</b><p style="color:var(--mut)">Ceritakan proses yang masih manual. Kadang masalah utama bukan yang terlihat dulu.</p></div></div>
+<div class="step"><span class="n">02</span><div><b>Proposal scope + harga</b><p style="color:var(--mut)">Anda terima dokumen: fitur, timeline, harga fix.</p></div></div>
+<div class="step"><span class="n">03</span><div><b>Build + check-in</b><p style="color:var(--mut)">Progres terlihat, tidak molor diam-diam.</p></div></div>
+<div class="step"><span class="n">04</span><div><b>Serah terima + support</b><p style="color:var(--mut)">Dokumentasi + periode dukungan jelas.</p></div></div>
+</div>
+</section>
+
+<section aria-label="FAQ">
+<h2>Pertanyaan umum</h2>
+<details open><summary>Rusak setelah launch gimana?</summary><p>Setiap proyek ada periode support tertulis di proposal. Kalau sistem berhenti jalan, itu tanggung jawab kami.</p></details>
+<details><summary>Berapa lama pengerjaannya?</summary><p>Tergantung scope. Timeline dikunci di proposal setelah obrolan awal, Anda tidak menebak-nebak.</p></details>
+<details><summary>Cuma bikin tools WA?</summary><p>Tidak. WA hanya satu bagian. Mayoritas proyek adalah backend custom: dashboard, payment, stok, laporan, integrasi.</p></details>
+<details><summary>Belum tahu butuh apa?</summary><p>Wajar. Cukup jelaskan proses bisnis dan bagian yang merepotkan, bentuk sistem dirumuskan bareng.</p></details>
+</section>
+
+<section aria-label="Kontak">
+<div class="final">
+<h2 style="color:#fff">Masih ada yang dikerjakan tangan? Itu titik awalnya.</h2>
+<p>Anda tidak perlu tahu solusi teknisnya. Klik tombol di bawah, ceritakan bisnis Anda, kami balas di hari yang sama (GMT+7).</p>
+<div class="cta-row">
+<a class="btn wa" data-wa href="https://wa.me/6282142858194?text=Halo%20Djava%2C%20saya%20dari%20iklan.%20Bisnis%20saya%20___%2C%20yang%20masih%20manual%20___%20.%20Minta%20estimasi.">Chat WhatsApp Sekarang</a>
+<a class="btn ghost" style="color:#fff;border-color:#44403c" href="#demo">Coba Demo Dulu</a>
+</div>
+</div>
+</section>
+</div>
+</main>
+
+<footer><div class="wrap"><span>© 2026 djava.web.id, Malang, Indonesia</span><span>Landing portofolio untuk Meta Ads · sumber: djava.web.id</span></div></footer>
+<div class="sticky-wa"><a data-wa href="https://wa.me/6282142858194?text=Halo%20Djava%2C%20saya%20dari%20iklan.%20Minta%20estimasi%20sistem.">💬 Chat WhatsApp, Respon Hari Ini</a></div>
+
+<script>
+// filter kategori
+var btns=document.querySelectorAll('.filters button'),cards=document.querySelectorAll('.demo-card');
+btns.forEach(function(b){b.addEventListener('click',function(){
+btns.forEach(function(x){x.setAttribute('aria-pressed','false')});
+b.setAttribute('aria-pressed','true');
+var f=b.dataset.f;
+cards.forEach(function(c){c.style.display=(f==='all'||c.dataset.cat===f)?'':'none'});
+})});
+// teruskan UTM iklan ke link WA (biar ketahuan iklan mana yang closing)
+(function(){var q=location.search;if(!q)return;document.querySelectorAll('a[data-wa]').forEach(function(a){a.href+=encodeURIComponent(' [ref:'+q.replace('?','')+']')})})();
+</script>
+</body>
+</html>
